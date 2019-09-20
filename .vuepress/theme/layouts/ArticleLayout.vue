@@ -4,7 +4,7 @@
         <div class="container mb-8">
             <ArticleMetaData />
         </div>
-        <Content />
+        <Content class="content default"/>
         <div class="bg-topaz mb-16 mt-8 py-8">
             <div class="container">
                 <SubscribeForm />
