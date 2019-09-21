@@ -1,3 +1,7 @@
+const nav = require('../config/nav.json');
+const sidebar = require('../config/sidebar.json');
+const config = require('../config/config.json');
+
 module.exports = {
 	title: 'The Viking Dev',
 	themeConfig: {
