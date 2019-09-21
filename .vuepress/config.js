@@ -1,12 +1,13 @@
 module.exports = {
-	title: 'Loris Leiva',
+	title: 'The Viking Dev',
 	themeConfig: {
-		domain: 'https://lorisleiva.com',
-		repo: 'https://github.com/lorisleiva/blog', // TODO: Not used yet
-		nav: [ '/', '/cv/' ],
+		domain: 'https://theviking.dev',
+		repo: 'https://github.com/ClarkMitchell/blog',
+		nav,
+                sidebar
 		author: {
-			name: 'Loris Leiva',
-			twitter: '@lorismatic',
+			name: 'Clark Collins',
+			twitter: '@thevikingdev',
 		},
 		minimumFeaturedArticles: 6,
 		featuredArticles: [
@@ -19,7 +20,6 @@ module.exports = {
 		],
 	},
 	head: [
-		// TODO: ['script', { type: 'application/ld+json' }, JSON.stringify({})],
 		['link', { rel: 'apple-touch-icon', sizes: '57x57', href: '/apple-icon-57x57.png' }],
 		['link', { rel: 'apple-touch-icon', sizes: '60x60', href: '/apple-icon-60x60.png' }],
 		['link', { rel: 'apple-touch-icon', sizes: '72x72', href: '/apple-icon-72x72.png' }],
