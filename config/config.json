@@ -1,0 +1,33 @@
+
+
+
+
+
+	title: 'The Viking Dev',
+	themeConfig: {
+		domain: 'https://theviking.dev',
+		repo: 'https://github.com/ClarkMitchell/blog',
+		nav,
+    sidebar
+		author: {
+			name: 'Clark Collins',
+			twitter: '@thevikingdev',
+		},
+		minimumFeaturedArticles: 6,
+		featuredArticles: [
+			'/laravel-deployment-using-gitlab-pipelines/',
+			'/making-cron-expressions-human-readable/',
+			'/redesigning-my-blog-using-vuepress-and-tailwindcss/',
+			'/introducing-javel/',
+			'/conciliating-laravel-and-ddd/',
+			'/renderless-resizable-textarea/',
+		],
+	},
+
+    postcss:
+
+
+
+
+
+}
