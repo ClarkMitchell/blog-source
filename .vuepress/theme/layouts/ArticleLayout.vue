@@ -1,10 +1,13 @@
 <template>
     <div>
         <FloatingHeader />
+
         <div class="container mb-8">
             <ArticleMetaData />
         </div>
+
         <Content class="content default"/>
+
         <div class="bg-topaz mb-16 mt-8 py-8">
             <div class="container">
                 <SubscribeForm />
@@ -42,7 +45,7 @@ import FloatingHeader from '@theme/components/FloatingHeader'
 import ArticleMetaData from '@theme/components/ArticleMetaData'
 import SubscribeForm from '@theme/components/SubscribeForm'
 import ArticleCard from '@theme/components/ArticleCard'
-
+ 
 export default {
     components: { FloatingHeader, ArticleMetaData, SubscribeForm, ArticleCard },
     computed: {
@@ -59,6 +62,11 @@ export default {
 
             return randomElements(excludePages(relatedArticles, [this.$page]), 2)
         }
-    }
+    },
+     data: function () {
+         return {
+
+         }
+      }
 }
 </script>

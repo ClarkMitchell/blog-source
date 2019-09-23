@@ -15,14 +15,6 @@
         @media md 
             font-size config('textSizes.2xl')
 
-    // Code breaks out of the container.
-    div[class*="language-"]
-        @extends $break-out-of-flex-container
-        border-radius 0
-        align-self stretch
-        pre, pre[class*="language-"]
-            @extends $container
-    
     // Image breaks out of the container
     > p > img
         display block
