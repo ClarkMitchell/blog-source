@@ -121,7 +121,7 @@ module.exports = {
       'sans-serif',
     ],
     'sans': [
-      'Source Sans Pro',
+      'IBM Plex Sans',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -136,7 +136,7 @@ module.exports = {
       'sans-serif',
     ],
     'serif': [
-      'Arkibal Serif',
+      'IBM Plex Serif',
       'Constantia',
       'Lucida Bright',
       'Lucidabright',
@@ -149,7 +149,7 @@ module.exports = {
       'serif',
     ],
     'mono': [
-      'Menlo',
+      'IBM Plex Mono',
       'Monaco',
       'Consolas',
       'Liberation Mono',
