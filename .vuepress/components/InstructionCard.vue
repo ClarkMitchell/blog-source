@@ -1,7 +1,7 @@
 <template>
-    <div :class=id class="info-box shadow rounded-xl">
-        <div class="p-4 bg-grey-lightest mb-6">
-          <GradientBar :progress="progress" class="h-2 -mt-4 -ml-4" />
+    <div :class="parent + id" class="shadow rounded-lg overflow-hidden bg-grey-lightest mb-6">
+        <GradientBar :progress="progress" class="h-3" />
+        <div class="p-4">
           <slot></slot>
       </div>
     </div>
@@ -11,8 +11,8 @@
 import GradientBar from '@theme/components/GradientBar'
  
 export default {
-     components: { GradientBar },
-     props: ["id"],
+    components: { GradientBar },
+    props: ["parent", "id"],
     data () {
         return {
             progressValue: 0,
@@ -28,9 +28,9 @@ export default {
     },
     methods: {
         update () {
-            const content = document.querySelector('.' + this.id)
-            const progressValue = window.scrollY + window.innerHeight / 3
-            const progressMax = content.offsetTop 
+            const content = document.querySelector('.' + this.parent + this.id)
+            const progressValue = window.scrollY + window.innerHeight / 4
+            const progressMax = content.offsetTop
             this.progressMax = progressMax
             this.progressValue = progressValue
         },

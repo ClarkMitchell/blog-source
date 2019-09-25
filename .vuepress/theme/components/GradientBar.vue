@@ -5,8 +5,8 @@
 <script>
 export default {
     props: {
-        colors: { default: () => [ '#EE7752', '#E73C7E', '#23A6D5', '#23D5AB' ] },
-        time: { default: '15s' },
+        colors: { default: () => [ '#FFBE0B', '#FB5607', '#FF006E', '#8338EC', '#3A86FF' ] },
+        time: { default: '20s' },
         degree: { default: '120deg' },
         progress: { default: 100 },
     },

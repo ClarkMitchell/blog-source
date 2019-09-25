@@ -8,21 +8,11 @@
 
         <Content class="content default"/>
 
-        <div class="bg-topaz mb-16 mt-8 py-8">
-            <div class="container">
-                <SubscribeForm />
-            </div>
-        </div>
-        <div class="container">
-            <ClientOnly>
-                <Disqus 
-                    shortname="loris-leiva" 
-                    :title="$page.title"
-                    :identifier="disqusIdentifier" 
-                    :url="disqusUrl"
-                />
-            </ClientOnly>
-        </div>
+<!--        <div class="bg-topaz mb-16 mt-8 py-8">-->
+<!--            <div class="container">-->
+<!--                <SubscribeForm />-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="bg-grey-lighter mt-16">
             <div class="container py-4 sm:py-8">
                 <h2>Related articles</h2>

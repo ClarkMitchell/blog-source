@@ -1,12 +1,12 @@
 {
   "name": "blog",
-  "author": "Loris Leiva",
+  "author": "Clark Mitchell",
   "description": "Personal website and blog",
   "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lorisleiva/blog.git"
+    "url": "git+https://github.com/clarkmitchell/blog.git"
   },
   "keywords": [
     "laravel",

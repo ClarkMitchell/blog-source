@@ -1,7 +1,7 @@
 $codeBackground = $codeBgColor
 $codeColor = config('colors.white')
 $codeHighlightBackground = rgba(0, 0, 0, 66%)
-$codeVerticalPadding = config('padding.10')
+//$codeVerticalPadding = config('padding.1')
 // $codeHighlightBackground = linear-gradient(120deg, transparentify(#EE7752, $codeBgColor, 0.9), transparentify(#E73C7E, $codeBgColor, 0.9))
 
 pre, code, kbd
@@ -46,7 +46,6 @@ div[class*="language-"]
     margin-bottom config('margin.8')
     .highlight-lines
         user-select none
-        padding-top $codeVerticalPadding
         position absolute
         top 0
         left 0
