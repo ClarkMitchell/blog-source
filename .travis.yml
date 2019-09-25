@@ -12,6 +12,7 @@ branches:
 
 install:
   - npm run docs:build
+  - npm run move
 
 script:
   - echo "Skipping tests"
