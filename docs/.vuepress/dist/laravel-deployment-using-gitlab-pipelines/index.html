@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>A Blog Format For Better Context</title>
+    <meta name="description" content="In this tutorial, we will set up a complex GitLab pipeline that builds our application, tests it and deploys it using Laravel Deployer.">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.d1fafc99.css" as="style"><link rel="preload" href="/assets/js/app.f0379f84.js" as="script"><link rel="preload" href="/assets/js/2.f113c167.js" as="script"><link rel="preload" href="/assets/js/23.a3b585a7.js" as="script"><link rel="prefetch" href="/assets/js/10.463c40b2.js"><link rel="prefetch" href="/assets/js/11.41347932.js"><link rel="prefetch" href="/assets/js/12.160cf6fa.js"><link rel="prefetch" href="/assets/js/13.869049d5.js"><link rel="prefetch" href="/assets/js/14.6ab5dbac.js"><link rel="prefetch" href="/assets/js/15.5b213614.js"><link rel="prefetch" href="/assets/js/16.9b9d25f1.js"><link rel="prefetch" href="/assets/js/17.53e9786c.js"><link rel="prefetch" href="/assets/js/18.407766eb.js"><link rel="prefetch" href="/assets/js/19.ad818b5a.js"><link rel="prefetch" href="/assets/js/20.6a6cbda5.js"><link rel="prefetch" href="/assets/js/21.16473eda.js"><link rel="prefetch" href="/assets/js/22.17daa536.js"><link rel="prefetch" href="/assets/js/24.693bd400.js"><link rel="prefetch" href="/assets/js/25.1cb8e654.js"><link rel="prefetch" href="/assets/js/3.e245ae37.js"><link rel="prefetch" href="/assets/js/4.32ef7c1a.js"><link rel="prefetch" href="/assets/js/5.1fabd509.js"><link rel="prefetch" href="/assets/js/6.3a66a41c.js"><link rel="prefetch" href="/assets/js/7.9038972a.js"><link rel="prefetch" href="/assets/js/8.0cd2f1f4.js"><link rel="prefetch" href="/assets/js/9.1449d7bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d1fafc99.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="content default"><h1 id="a-blog-format-for-better-context"><a href="#a-blog-format-for-better-context" aria-hidden="true" class="header-anchor">#</a> A Blog Format For Better Context</h1> <StickySection id="foobar" first="
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus,
+                               nulla eget condimentum scelerisque, ipsum magna varius erat, ut posuere purus tellus vel ante. 
+                               Duis rhoncus interdum molestie. Fusce semper ex ut tortor ultricies, ac imperdiet metus ornare. 
+                               Donec interdum iaculis justo ac rhoncus. Integer convallis pharetra urna, vehicula eleifend magna 
+                               vehicula vel. pellentesque turpis. Integer nulla sapien, ultricies vitae leo dignissim, 
+                               condimentum bibendum felis." second="
+                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus,
+                              nulla egetc rhoncus. Integer convallis pharetra urna, vehicula eleifend magna 
+                              vehicula vel. Duis in pellentesque turpis. Integer nulla sapien, ultricies vitae leo dignissim, 
+                              condimentum bibendum felis." third="
+                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus,
+                                              nulla eget condimentum scelerisque, ipsum magna varius erat, ut posuere purus tellus vel ante. 
+                                              Duis rhoncus interdum molestie. Fusce semper ex ut tortor ultricies, ac imperdiet metus ornare. 
+                                              Donec interdun pellentesque turpis. Integer nulla sapien, ultricies vitae leo dignissim, 
+                                              condimentum bibendum felis." fourth="
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus,
+                                             nulla eget condimentum scelerisque, ipsum magna varius erat, ut posuere purus tellus vel ante. 
+                                             Duis rhons in pellentesque turpis. Integer nulla sapien, ultricies vitae leo dignissim, 
+                                             condimentum bibendum felis."><div class="language-php extra-class"><div class="highlight-lines"><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Closure</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">CheckAge</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> Closure <span class="token variable">$next</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">age</span> <span class="token operator">&lt;=</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">redirect</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> <span class="token variable">$next</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre></div></StickySection> <StickySection id="barfoo" first="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus, nulla eget condimentum scelerisque, ipsum magna varius erat, ut posuere purus tellus vel ante. Duis rhoncus interdum molestie. Fusce semper ex ut tortor ultricies, ac imperdiet metus ornare. Donec interdum iaculis justo ac rhoncus. Integer convallis pharetra urna, vehicula eleifend magna vehicula vel. Duis in pellentesque turpis. Integer nulla sapien, ultricies vitae leo dignissim, condimentum bibendum felis. Phasellus malesuada lobortis bibendum. Praesent vulputate nisi vel facilisis rutrum. Integer rhoncus ultricies posuere. Vestibulum nibh odio, eleifend in tellus id, placerat rutrum nunc. Pellentesque quis malesuada leo. Pellentesque urna augue, suscipit eu ipsum sed, hendrerit laoreet dui. Nulla ultricies eros id ultrices venenatis. Praesent ullamcorper risus vitae tellus dapibus imperdiet. Proin velit metus, pellentesque eu pharetra nec, volutpat a risus. Maecenas tristique pulvinar elit et lacinia. Donec imperdiet lacus ac dapibus ullamcorper. Donec sed faucibus justo. Etiam tincidunt, felis at pretium elementum, neque tortor laoreet ipsum, et placerat ante nibh sit amet libero. Curabitur consequat malesuada nulla id cursus. Aenean finibus nisl ornare metus aliquam, in posuere leo mollis. Ut ac placerat sapien.Suspendisse sollicitudin maximus placerat. Aliquam eget metus non diam interdum elementum. Etiam fringilla mattis euismod. In egestas finibus rhoncus. Duis enim arcu, varius non ante ac, porta commodo felis. Curabitur aliquam interdum lectus sed sagittis. Curabitur a elit bibendum, facilisis arcu id, tincidunt tortor. Maecenas lacinia auctor ante nec viverra. Nullam mollis ligula eu pretium aliquam. Pellentesque et nisl porttitor, facilisis arcu sed, mattis justo. Nulla facilisi. Ut vestibulum odio vitae erat consequat bibendum. Proin sodales odio ligula. Fusce imperdiet, urna id egestas condimentum, purus quam placerat massa, ut fermentum eros libero porttitor dolor.Nulla pulvinar gravida efficitur. Praesent consectetur elit vel tortor suscipit, tristique pretium nulla iaculis. Phasellus imperdiet ligula nec ex scelerisque, in bibendum neque tristique. Cras erat elit, dignissim eu risus in, finibus suscipit elit. Praesent tincidunt est diam, sed lobortis elit blandit et. Nam nec euismod mauris. Nunc non ultricies enim, nec condimentum tellus. Nulla ut efficitur lectus. Vestibulum viverra sem et volutpat porta. Sed tincidunt erat sit amet lorem mattis ullamcorper. Sed mattis blandit massa, at tincidunt tortor viverra in. Aenean mi erat, elementum id metus sed, blandit efficitur nisl. Proin nec erat pharetra, convallis lorem eget, venenatis tellus. Vestibulum placerat ultrices sodales. Vestibulum euismod in mi at pharetra. Sed auctor elementum mollis. Proin libero mauris, feugiat a libero et, lobortis cursus nunc. "><div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Closure</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">CheckAge</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> Closure <span class="token variable">$next</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">age</span> <span class="token operator">&lt;=</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">redirect</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> <span class="token variable">$next</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre></div></StickySection></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f0379f84.js" defer></script><script src="/assets/js/2.f113c167.js" defer></script><script src="/assets/js/23.a3b585a7.js" defer></script>
+  </body>
+</html>

@@ -5,6 +5,7 @@ const head = require('../.vuepress/config/head.json');
 const featuredArticles = require('../.vuepress/config/featured.json');
 
 module.exports = {
+    base: "/blog/"
     title: config.title,
     themeConfig: {
         domain: config.domain,

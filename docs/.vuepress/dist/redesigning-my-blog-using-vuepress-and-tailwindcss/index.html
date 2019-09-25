@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redesigning my blog using Vuepress and TailwindCSS</title>
+    <meta name="description" content="Moving away from a traditional database blog, I explain why and how I moved to this new stack.">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.d1fafc99.css" as="style"><link rel="preload" href="/assets/js/app.f0379f84.js" as="script"><link rel="preload" href="/assets/js/2.f113c167.js" as="script"><link rel="preload" href="/assets/js/24.693bd400.js" as="script"><link rel="prefetch" href="/assets/js/10.463c40b2.js"><link rel="prefetch" href="/assets/js/11.41347932.js"><link rel="prefetch" href="/assets/js/12.160cf6fa.js"><link rel="prefetch" href="/assets/js/13.869049d5.js"><link rel="prefetch" href="/assets/js/14.6ab5dbac.js"><link rel="prefetch" href="/assets/js/15.5b213614.js"><link rel="prefetch" href="/assets/js/16.9b9d25f1.js"><link rel="prefetch" href="/assets/js/17.53e9786c.js"><link rel="prefetch" href="/assets/js/18.407766eb.js"><link rel="prefetch" href="/assets/js/19.ad818b5a.js"><link rel="prefetch" href="/assets/js/20.6a6cbda5.js"><link rel="prefetch" href="/assets/js/21.16473eda.js"><link rel="prefetch" href="/assets/js/22.17daa536.js"><link rel="prefetch" href="/assets/js/23.a3b585a7.js"><link rel="prefetch" href="/assets/js/25.1cb8e654.js"><link rel="prefetch" href="/assets/js/3.e245ae37.js"><link rel="prefetch" href="/assets/js/4.32ef7c1a.js"><link rel="prefetch" href="/assets/js/5.1fabd509.js"><link rel="prefetch" href="/assets/js/6.3a66a41c.js"><link rel="prefetch" href="/assets/js/7.9038972a.js"><link rel="prefetch" href="/assets/js/8.0cd2f1f4.js"><link rel="prefetch" href="/assets/js/9.1449d7bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d1fafc99.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="content default"><h1 id="redesigning-my-blog-using-vuepress-and-tailwindcss"><a href="#redesigning-my-blog-using-vuepress-and-tailwindcss" aria-hidden="true" class="header-anchor">#</a> Redesigning my blog using Vuepress and TailwindCSS</h1> <p>A few months ago I updated my blog to move away from Ghost (a blogging platform with a minimalistic interface) and use Vuepress instead.</p> <p>I didn’t have any particular complains about Ghost but I wanted more control over my blog without too much hassle. Ghost was also taking care of renewing my SSH certificates but the CRON job suddenly decided not to do its job anymore. That’s when I thought, &quot;Right! Let’s take control of my blog again.&quot;</p> <p><img src="/covers/redesigning-my-blog-using-vuepress-and-tailwindcss.jpg" alt="cover"></p> <h2 id="why-vuepress"><a href="#why-vuepress" aria-hidden="true" class="header-anchor">#</a> Why Vuepress?</h2> <p>I am a real Vue fanboy and having the ability to use some Vue components directly in my markdown files is incredibly useful.</p> <p>I also wanted to write articles using static files so that 100% of my blog would be open source (instead of having the content of my blog in a database somewhere). This is a non-negligible advantage for a teaching platform. Also, people can fix my typos.</p> <h2 id="why-tailwindcss"><a href="#why-tailwindcss" aria-hidden="true" class="header-anchor">#</a> Why TailwindCSS?</h2> <p>I mean, do we even need to ask that question anymore? I’ve been designing applications with TailwindCSS ever since it was available and I love it every day a little more. It makes me a happy developer and a proud designer.</p> <p>It may seem like an emotional decision but honestly, there is enough documentation out there to convince you about the technical and semantical level.</p> <h2 id="architecture-of-a-vuepress-blog"><a href="#architecture-of-a-vuepress-blog" aria-hidden="true" class="header-anchor">#</a> Architecture of a Vuepress blog</h2> <p>All the content of your blog (markdown files, images used in articles, etc.) can be arranged however you like.</p> <p>In my case, I have two folders <code>pages</code> and <code>articles</code> at the root of my repository. These folders do not contain one markdown file per page but rather one folder per page that contains only one markdown file named <code>index.md</code>. This arrangement allows me to group all images and resources related to a page or article with the article itself so everything is in one place.</p> <div class="language- extra-class"><pre class="language-text"><code>├── .vuepress
+├── LICENSE
+├── README.md
+├── articles
+│   ├── ...
+│   ├── 20180806 Laravel deployment using GitLab's pipelines
+│   ├── 20180912 Google Calendar Sync
+│   ├── 20180916 Google Calendar Sync 2
+│   ├── 20180930 Google Calendar Sync 3
+│   ├── 20190211 Introducing Javel
+│   └── 20190321 Laravel pagination with TailwindCSS
+│       ├── index.md
+│       ├── pagination.png
+│       ├── pagination_1.png
+│       ├── pagination_2.png
+│       ├── pagination_3.png
+│       ├── pagination_4.png
+│       ├── pagination_5.png
+│       └── pagination_6.png
+├── package-lock.json
+├── package.json
+├── pages
+└── tailwind.js
+</code></pre></div><p>All the rest of the Vuepress application is located in a <code>.vuepress</code> folder. That includes the layout of your application, Vue components, global assets, custom styling, settings, plugin registration, etc.</p> <div class="language- extra-class"><pre class="language-text"><code>├── .vuepress
+│   ├── config.js
+│   ├── public
+│   └── theme
+│       ├── articles.js
+│       ├── assets
+│       ├── components
+│       ├── global-components
+│       ├── index.js
+│       ├── layouts
+│       ├── search.js
+│       ├── styles
+│       └── utils.js
+└── ...
+</code></pre></div><h2 id="how-to-use-tailwindcss-with-vuepress"><a href="#how-to-use-tailwindcss-with-vuepress" aria-hidden="true" class="header-anchor">#</a> How to use TailwindCSS with Vuepress?</h2> <p>Laughably simple. Vuepress already has a <code>postcss</code> option on their <code>config.js</code> file. All you need to do after installing TailwindCSS (via npm) is to add it as a postcss plugin.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .vuepress/config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    postcss<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'tailwindcss'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'./tailwind.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'autoprefixer'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="vuepress-plugins"><a href="#vuepress-plugins" aria-hidden="true" class="header-anchor">#</a> Vuepress plugins</h2> <p>Vuepress can be extended at length via its plugin system. There are already quite a few useful core plugins available like <code>google-analytics</code>.</p> <p>It is also very simple to create your own plugins. Not necessarily to create a new open source package but simply to clean up your application of some logic you can isolate somewhere else. Kind of like a service class.</p> <p>For example, I created a file <code>articles.js</code> that computes which articles should be featured on the front page and provides a global computed property called <code>$featuredArticles</code>. I also created a file called <code>search.js</code> whose responsibility is to provide a global <code>$search</code> method that will return all articles matching your query.</p> <p>Finally, I created (and extracted to their own repository) two plugins that I thought other people might benefit from. The first one is called <code>seo</code> and takes as much data available from your configuration file and your articles to set up all the metadata you need for sharing to social media.</p> <GithubButton url="https://github.com/lorisleiva/vuepress-plugin-seo" title="SEO Plugin on GitHub"></GithubButton> <p>The second one is called <code>disqus</code> and simply registers a global <code>Disqus</code> component that you can, for example, insert in your article layout.</p> <GithubButton url="https://github.com/lorisleiva/vuepress-plugin-disqus" title="Disqus Plugin on GitHub"></GithubButton> <p>All of these plugins are registered in the configuration file of my theme like so.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .vuepress/theme/index.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'@vuepress/google-analytics'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> ga<span class="token punctuation">:</span> <span class="token string">'UA-100767601-5'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">'seo'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token string">'disqus'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    enhanceAppFiles<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'articles.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'search.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="conclusion"><a href="#conclusion" aria-hidden="true" class="header-anchor">#</a> Conclusion</h2> <p>Taking back control of my blog using Vuepress and TailwindCSS was a lot of fun and I recommend that stack to anyone who’s not afraid of spending a bit of time to experiment with a design that will match their audience best.</p> <p>During that process, I created lots of cool components that would deserve a dedicated tutorial each. For example, the animated gradient bar at the very top of my blog. All of these tutorials are on my To-Do list but in the meantime feel free to scavenge my blog’s repository which is public as from today. 🎉</p> <GithubButton url="https://github.com/lorisleiva/blog" title="See this blog on GitHub"></GithubButton></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f0379f84.js" defer></script><script src="/assets/js/2.f113c167.js" defer></script><script src="/assets/js/24.693bd400.js" defer></script>
+  </body>
+</html>

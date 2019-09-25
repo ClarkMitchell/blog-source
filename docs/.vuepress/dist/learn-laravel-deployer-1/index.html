@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Zero-downtime Laravel deployment in 5 minutes</title>
+    <meta name="description" content="Deploying your Laravel application without any downtime just got easier. This video helps you get started in 5 minutes only.">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.d1fafc99.css" as="style"><link rel="preload" href="/assets/js/app.f0379f84.js" as="script"><link rel="preload" href="/assets/js/2.f113c167.js" as="script"><link rel="preload" href="/assets/js/20.6a6cbda5.js" as="script"><link rel="prefetch" href="/assets/js/10.463c40b2.js"><link rel="prefetch" href="/assets/js/11.41347932.js"><link rel="prefetch" href="/assets/js/12.160cf6fa.js"><link rel="prefetch" href="/assets/js/13.869049d5.js"><link rel="prefetch" href="/assets/js/14.6ab5dbac.js"><link rel="prefetch" href="/assets/js/15.5b213614.js"><link rel="prefetch" href="/assets/js/16.9b9d25f1.js"><link rel="prefetch" href="/assets/js/17.53e9786c.js"><link rel="prefetch" href="/assets/js/18.407766eb.js"><link rel="prefetch" href="/assets/js/19.ad818b5a.js"><link rel="prefetch" href="/assets/js/21.16473eda.js"><link rel="prefetch" href="/assets/js/22.17daa536.js"><link rel="prefetch" href="/assets/js/23.a3b585a7.js"><link rel="prefetch" href="/assets/js/24.693bd400.js"><link rel="prefetch" href="/assets/js/25.1cb8e654.js"><link rel="prefetch" href="/assets/js/3.e245ae37.js"><link rel="prefetch" href="/assets/js/4.32ef7c1a.js"><link rel="prefetch" href="/assets/js/5.1fabd509.js"><link rel="prefetch" href="/assets/js/6.3a66a41c.js"><link rel="prefetch" href="/assets/js/7.9038972a.js"><link rel="prefetch" href="/assets/js/8.0cd2f1f4.js"><link rel="prefetch" href="/assets/js/9.1449d7bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d1fafc99.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="content default"><h1 id="zero-downtime-laravel-deployment-in-5-minutes"><a href="#zero-downtime-laravel-deployment-in-5-minutes" aria-hidden="true" class="header-anchor">#</a> Zero-downtime Laravel deployment in 5 minutes</h1> <YouTube url="https://www.youtube.com/embed/EaCd1ocep8A?rel=0"></YouTube> <h2 id="checklist"><a href="#checklist" aria-hidden="true" class="header-anchor">#</a> Checklist</h2> <h4 id="set-up-laravel-deployer"><a href="#set-up-laravel-deployer" aria-hidden="true" class="header-anchor">#</a> Set up Laravel Deployer</h4> <p>❑  Go to your application folder <br>
+❑  <code>composer require lorisleiva/laravel-deployer</code> <br>
+❑  <code>php artisan deploy:init</code> <br>
+❑  <code>php artisan deploy</code></p> <h4 id="ensure-your-server-can-communicate-with-github"><a href="#ensure-your-server-can-communicate-with-github" aria-hidden="true" class="header-anchor">#</a> Ensure your server can communicate with GitHub</h4> <ul><li>If your server don’t have a SSH key, create one: <br>
+❑  <code>ssh-keygen -t rsa -b 4096 -C &quot;root@laraveldeployer.com&quot;</code> <br>
+❑  <code>eval &quot;$(ssh-agent -s)&quot;</code> <br>
+❑  <code>ssh-add ~/.ssh/id_rsa</code></li> <li>If your server don’t have github.com in its <code>known_hosts</code>: <br>
+❑  Deploy using the <code>git_tty</code> option. <br>
+❑  <code>php artisan deploy -o git_tty=true</code></li></ul> <h4 id="set-up-your-production-environment"><a href="#set-up-your-production-environment" aria-hidden="true" class="header-anchor">#</a> Set up your production environment</h4> <p>❑  <code>php artisan ssh</code> <br>
+❑  <code>cp .env.example .env</code> <br>
+❑  <code>php artisan key:generate</code> <br>
+❑  <code>vim .env</code> and configure your production environment. <br>
+❑  <code>exit</code> <br>
+❑  <code>php artisan deploy</code></p> <h4 id="update-nginx-configurations"><a href="#update-nginx-configurations" aria-hidden="true" class="header-anchor">#</a> Update nginx configurations</h4> <p>❑  <code>vim /etc/nginx/sites-available/mydomain.com</code> <br>
+❑  Point the <code>root</code> folder to the <code>current/public</code> directory. <br>
+❑  <code>service nginx restart &amp;&amp; service php7.2-fpm reload</code></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f0379f84.js" defer></script><script src="/assets/js/2.f113c167.js" defer></script><script src="/assets/js/20.6a6cbda5.js" defer></script>
+  </body>
+</html>

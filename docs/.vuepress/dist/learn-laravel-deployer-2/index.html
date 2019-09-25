@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Setting up a Laravel server</title>
+    <meta name="description" content="It&#39;s set up time! Let&#39;s see how to create and configure a server that can host your Laravel application.">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.d1fafc99.css" as="style"><link rel="preload" href="/assets/js/app.f0379f84.js" as="script"><link rel="preload" href="/assets/js/2.f113c167.js" as="script"><link rel="preload" href="/assets/js/21.16473eda.js" as="script"><link rel="prefetch" href="/assets/js/10.463c40b2.js"><link rel="prefetch" href="/assets/js/11.41347932.js"><link rel="prefetch" href="/assets/js/12.160cf6fa.js"><link rel="prefetch" href="/assets/js/13.869049d5.js"><link rel="prefetch" href="/assets/js/14.6ab5dbac.js"><link rel="prefetch" href="/assets/js/15.5b213614.js"><link rel="prefetch" href="/assets/js/16.9b9d25f1.js"><link rel="prefetch" href="/assets/js/17.53e9786c.js"><link rel="prefetch" href="/assets/js/18.407766eb.js"><link rel="prefetch" href="/assets/js/19.ad818b5a.js"><link rel="prefetch" href="/assets/js/20.6a6cbda5.js"><link rel="prefetch" href="/assets/js/22.17daa536.js"><link rel="prefetch" href="/assets/js/23.a3b585a7.js"><link rel="prefetch" href="/assets/js/24.693bd400.js"><link rel="prefetch" href="/assets/js/25.1cb8e654.js"><link rel="prefetch" href="/assets/js/3.e245ae37.js"><link rel="prefetch" href="/assets/js/4.32ef7c1a.js"><link rel="prefetch" href="/assets/js/5.1fabd509.js"><link rel="prefetch" href="/assets/js/6.3a66a41c.js"><link rel="prefetch" href="/assets/js/7.9038972a.js"><link rel="prefetch" href="/assets/js/8.0cd2f1f4.js"><link rel="prefetch" href="/assets/js/9.1449d7bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d1fafc99.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="content default"><h1 id="setting-up-a-laravel-server"><a href="#setting-up-a-laravel-server" aria-hidden="true" class="header-anchor">#</a> Setting up a Laravel server</h1> <YouTube url="https://www.youtube.com/embed/HQD4yLv-SCQ?rel=0"></YouTube> <h2 id="checklist"><a href="#checklist" aria-hidden="true" class="header-anchor">#</a> Checklist</h2> <h4 id="create-droplet-and-link-domain"><a href="#create-droplet-and-link-domain" aria-hidden="true" class="header-anchor">#</a> Create droplet and link domain</h4> <p>❑  Create a droplet via <a href="https://m.do.co/c/c6ce8db48f10" target="_blank" rel="noopener noreferrer">Digital Ocean (<strong>$10 discount link</strong> 🔥)<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. <br>
+❑  Add your SSH key when creating your droplet. <br>
+❑  Add your domain name in the “Networking” section. <br>
+❑  Points <code>@</code> to the newly created droplet.</p> <h4 id="make-bash-more-friendly"><a href="#make-bash-more-friendly" aria-hidden="true" class="header-anchor">#</a> Make bash more friendly</h4> <p>❑  <code>ssh root@IPADDRESS</code> <br>
+❑  <code>vim ~/.bashrc</code> → search <code>/force_color_prompt</code> → uncomment <br>
+❑  <code>vim ~/.bashrc</code> → search <code>/PS1</code> → remove <code>@\h</code> and <code>\w</code> becomes <code>\W</code> <br>
+❑  Reload shell <code>exec bash -l</code></p> <h4 id="add-locales"><a href="#add-locales" aria-hidden="true" class="header-anchor">#</a> Add locales</h4> <p>❑  <code>echo &quot;LC_ALL=en_US.UTF-8&quot; &gt;&gt; /etc/default/locale</code> <br> <code>locale-gen en_US.UTF-8</code> <br>
+❑  <code>exit</code> and reconnect <code>ssh root@IPADDRESS</code></p> <h4 id="install-php-7-2"><a href="#install-php-7-2" aria-hidden="true" class="header-anchor">#</a> Install php 7.2</h4> <p>❑  <code>apt-get update -y &amp;&amp; apt-get upgrade -y</code> <br>
+❑  <code>apt-get -y install python-software-properties</code> <br>
+❑  <code>add-apt-repository -y ppa:ondrej/php</code> <br>
+❑  <code>apt-get update -y</code> <br>
+❑  <code>apt-get -y install php7.2 php7.2-common php7.2-gd php7.2-intl php7.2-zip php7.2-sqlite3 php7.2-mysql php7.2-fpm php7.2-mbstring php7.2-xml php7.2-curl php7.2-memcached unzip zip composer</code></p> <h4 id="configure-your-ngnix-server"><a href="#configure-your-ngnix-server" aria-hidden="true" class="header-anchor">#</a> Configure your ngnix server</h4> <div class="language-bash extra-class"><pre class="language-bash"><code>server <span class="token punctuation">{</span>
+    listen 80<span class="token punctuation">;</span>
+    listen <span class="token punctuation">[</span>::<span class="token punctuation">]</span>:80 ipv6only<span class="token operator">=</span>on<span class="token punctuation">;</span>
+    server_name mydomain.com<span class="token punctuation">;</span>
+    root /var/www/mydomain.com/current/public<span class="token punctuation">;</span>
+    index index.html index.htm index.php<span class="token punctuation">;</span>
+
+    charset utf-8<span class="token punctuation">;</span>
+    add_header X-Frame-Options <span class="token string">&quot;SAMEORIGIN&quot;</span><span class="token punctuation">;</span>
+    add_header X-XSS-Protection <span class="token string">&quot;1; mode=block&quot;</span><span class="token punctuation">;</span>
+    add_header X-Content-Type-Options <span class="token string">&quot;nosniff&quot;</span><span class="token punctuation">;</span>
+
+    location / <span class="token punctuation">{</span>
+        try_files <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /index.php?<span class="token variable">$query_string</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    location <span class="token operator">=</span> /favicon.ico <span class="token punctuation">{</span> access_log off<span class="token punctuation">;</span> log_not_found off<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    location <span class="token operator">=</span> /robots.txt  <span class="token punctuation">{</span> access_log off<span class="token punctuation">;</span> log_not_found off<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    access_log off<span class="token punctuation">;</span>
+    error_log  /var/log/nginx/laraveldeployer.com-error.log error<span class="token punctuation">;</span>
+
+    error_page 404 /index.php<span class="token punctuation">;</span>
+
+    location ~ \.php$ <span class="token punctuation">{</span>
+        include snippets/fastcgi-php.conf<span class="token punctuation">;</span>
+        fastcgi_param SCRIPT_FILENAME <span class="token variable">$realpath_root</span><span class="token variable">$fastcgi_script_name</span><span class="token punctuation">;</span>
+        fastcgi_param DOCUMENT_ROOT <span class="token variable">$realpath_root</span><span class="token punctuation">;</span>
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    location ~ /\.ht <span class="token punctuation">{</span>
+        deny all<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>❑  <code>service nginx restart &amp;&amp; service php7.2-fpm reload</code></p> <h4 id="set-up-mysql-and-create-a-database"><a href="#set-up-mysql-and-create-a-database" aria-hidden="true" class="header-anchor">#</a> Set up mysql and create a database</h4> <p>❑  <code>cat /root/.digitalocean_password</code> <br>
+❑  <code>mysql_secure_installation</code> <br>
+❑  <code>mysql -uroot -p -e &quot;create database laravel;&quot;</code></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f0379f84.js" defer></script><script src="/assets/js/2.f113c167.js" defer></script><script src="/assets/js/21.16473eda.js" defer></script>
+  </body>
+</html>
