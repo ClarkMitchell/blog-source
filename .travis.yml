@@ -11,11 +11,10 @@ branches:
   - master
 
 install:
+    - npm install -g vuepress
+script:
   - npm run build
   - npm run move
-
-script:
-  - echo "Skipping tests"
 
 deploy:
   provider: pages
