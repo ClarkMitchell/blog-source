@@ -11,7 +11,7 @@ branches:
   - master
 
 install:
-  - npm run docs:build
+  - npm run build
   - npm run move
 
 script:
