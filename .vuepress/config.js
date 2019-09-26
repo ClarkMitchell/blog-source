@@ -19,7 +19,7 @@ module.exports = {
     head,
     postcss: {
         plugins: [
-            require('tailwindcss')('./tailwind.js'),
+            require('tailwindcss')('../tailwind.js'),
             require('autoprefixer'),
         ]
     },
