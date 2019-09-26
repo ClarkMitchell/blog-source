@@ -1,5 +1,6 @@
 {
-"title": "The Viking Dev",
+  "base": "/blog/",
+  "title": "The Viking Dev",
   "domain": "https://theviking.dev",
   "repo": "https://github.com/ClarkMitchell/blog",
   "author": {
